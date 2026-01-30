@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afrian Math Academy | Platform Belajar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">MathMaster.Dev</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Tentang Saya</a></li>
+            <li><a href="#materi">Materi</a></li>
+            <li><a href="#alatHitung"> Alat Bantu Hitung</a>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1>Halo, Saya <span class="highlight">Muhammad Afrian</span></h1>
+            <p>Asal: | Lulusan: </p>
+            <a href="#materi" class="btn-main">Mulai Belajar</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about" class="about-section">
+            <div class="card card-about">
+                <h2>👤 Profil</h2>
+                <p></p>
+            </div>
+            <div class="card card-about">
+                <h2>🎨 Hobi</h2>
+                <p></p>
+            </div>
+            <div class="card card-about">
+                <h2>🔥 Motivasi</h2>
+                <p></p>
+            </div>
+        </section>
+
+        <hr class="separator">
+
+        <section id="materi">
+            <h2 class="section-title">📚 Portal Materi Matematika</h2>
+            
+            <div class="search-container">
+                <input type="text" id="cariMateri" placeholder="Cari materi atau kelas (contoh: Kelas 7)...">
+            </div>
+
+            <div id="pesanKosong" style="display: none; text-align: center; margin-top: 20px; color: #ef4444; font-weight: bold;">
+                <p>🔍 Maaf, materi tidak ditemukan.</p>
+            </div>
+
+            <h3 class="grade-title">Jenjang SMP (Kelas 7, 8, 9)</h3>
+            <div class="math-grid">
+                <div class="card math-card">
+                    <h3>Kelas 7</h3>
+                    <ul id="list-kelas-7"></ul> </div>
+
+                <div class="card math-card">
+                    <h3>Kelas 8</h3>
+                    <ul id="list-kelas-8"></ul>
+                </div>
+
+                <div class="card math-card">
+                    <h3>Kelas 9</h3>
+                    <ul id="list-kelas-9"></ul>
+                </div>
+            </div>
+
+            <h3 class="grade-title">Jenjang SMA (Kelas 10, 11, 12)</h3>
+            <div class="math-grid">
+                <div class="card math-card sma">
+                    <h3>Kelas 10</h3>
+                    <ul id="list-kelas-10"></ul>
+                </div>
+                
+                <div class="card math-card sma">
+                    <h3>Kelas 11</h3>
+                    <ul id="list-kelas-11"></ul>
+                </div>
+
+                <div class="card math-card sma">
+                    <h3>Kelas 12</h3>
+                    <ul id="list-kelas-12"></ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="alatHitung">
+        <h2 class="section-title">🛠️ Alat Bantu Hitung</h2>
+        <div class="AlatBantuHitungGrid">
+            <div class="card-tool">
+                <h2 class="titleAlatBantu">✖️ Tabel Perkalian</h2>
+                <input type="number" id="angkaTabel" placeholder="Angka (misal: 5)">
+                <button id="btnGenerate" class="btn-action">Buat Tabel</button>
+                <div id="hasilTabel" class="hasil-container"></div>
+            </div>
+                
+            <div class="card-tool">
+                <h2 class="titleAlatBantu">🧮 Luas Lingkaran</h2>
+                <input type="number" id="inputJari" placeholder="Jari-jari (r)">
+                <button id="btnHitung" class="btn-action">Hitung Luas</button>
+                <div id="teksHasil" class="hasil-container">Hasil akan muncul di sini...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="QuizMath">
+        <section id="quiz-container" class="card" style="margin-top: 30px; border-top: 5px solid #f59e0b;">
+            <h2 style="text-align: center;">🧠 Tantangan Kilat</h2>
+            <p style="text-align: center;">Jawab soal ini untuk menguji ketajaman otakmu!</p>
+            
+            <div id="quiz-box" style="text-align: center; margin: 20px 0; font-size: 1.5rem; font-weight: 800;">
+                <span id="angka1">0</span> <span id="operator">+</span> <span id="angka2">0</span> = ?
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 10px;">
+                <input type="number" id="jawabanUser" placeholder="Jawaban..." style="width: 120px; padding: 10px; border-radius: 8px; border: 1px solid #ddd;">
+                <button id="btnCekQuiz" class="btn-action" style="background: #f59e0b;">Cek</button>
+            </div>
+            
+            <p id="feedbackQuiz" style="text-align: center; margin-top: 15px; font-weight: bold;"></p>
+        </section>
+    </div>
+
+    <div class="MotBox">
+        <section id="motivation-box">
+            <h3>💡 Motivasi Belajar Hari Ini</h3>
+            <p id="quoteTeks">"Loading inspirasi untukmu..."</p>
+            <button id="btnQuote">Dapatkan Inspirasi Baru</button>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Afrian Math Academy. Semangat Belajar!</p>
+    </footer>
+
+    <script>
+        function cariMateri(kataKunci) {
+            const hasilCari = daftarMateriMath.filter(materi => 
+                materi.judul.toLowerCase().includes(kataKunci.toLowerCase())
+            );
+            console.log("Hasil pencarian:", hasilCari);
+        }
+        
+        // Gudang Data Materi (Array of Objects)
+        let daftarMateriMath = [
+            { id: 1, jenjang: "SMP", kelas: "7", judul: "Bilangan Bulat & Pecahan" },
+            { id: 2, jenjang: "SMP", kelas: "7", judul: "Himpunan" },
+            { id: 3, jenjang: "SMP", kelas: "8", judul: "Teorema Pythagoras" },
+            { id: 4, jenjang: "SMP", kelas: "8", judul: "Lingkaran" },
+            { id: 5, jenjang: "SMA", kelas: "10", judul: "Eksponen dan Logaritma" },
+            { id: 6, jenjang: "SMA", kelas: "11", judul: "Limit Fungsi Aljabar" },
+            { id: 7, jenjang: "SMA", kelas: "12", judul: "Statistika dan Peluang" },
+            { id: 8, jenjang: "SMP", kelas: "9", judul: "Perpangkatan dan Bentuk Akar" },
+            { id: 9, jenjang: "SMP", kelas: "9", judul: "Persamaan dan Fungsi Kuadrat" },
+            { id: 10, jenjang: "SMA", kelas: "10", judul: "Persamaan dan Pertidaksamaan Mutlak" },
+            { id: 11, jenjang: "SMA", kelas: "11", judul: "Program Linear" },
+            { id: 12, jenjang: "SMA", kelas: "12", judul: "Limit Fungsi Trigonometri" },
+            // Kamu tinggal tambah data baru di sini kapan saja!
+        ];
+
+        tampilkanMateri();
+
+        function tampilkanMateri() {
+            const semuaList = document.querySelectorAll('.math-card ul');
+            semuaList.forEach(list => list.innerHTML = "");
+
+            daftarMateriMath.forEach(materi => {
+                const listTujuan = document.getElementById(`list-kelas-${materi.kelas}`);
+                
+                if (listTujuan) {
+                    const li = document.createElement('li');
+                    
+                    // --- LOGIKA WARNA (DAY 11) ---
+                    if (materi.jenjang === "SMP") {
+                        li.classList.add('materi-smp');
+                    } else if (materi.jenjang === "SMA") {
+                        li.classList.add('materi-sma');
+                    }
+
+                    li.innerHTML = `
+                        <span>📝</span> 
+                        <span>${materi.judul}</span>
+                    `;
+// <button onclick="hapusMateri(${materi.id})" style="margin-left: auto; background: none; border: none; cursor: pointer;">❌</button>
+
+                    listTujuan.appendChild(li);
+                }
+            });
+        }
+
+        function hapusMateri(idHapus) {
+            // LOGIKA: Simpan semua materi KECUALI yang id-nya mau dihapus
+            daftarMateriMath = daftarMateriMath.filter(materi => materi.id !== idHapus);
+
+            // Setelah dihapus dari data, kita harus "gambar ulang" layarnya
+            tampilkanMateri();
+            
+            console.log(`Materi dengan ID ${idHapus} berhasil dihapus!`);
+        }
+
+        // --- LOGIKA PENCARIAN MATERI (UPGRADED) ---
+        const inputCari = document.getElementById('cariMateri');
+        const semuaKartu = document.querySelectorAll('.math-card');
+        const pesanKosong = document.getElementById('pesanKosong');
+        const semuaJudulJenjang = document.querySelectorAll('.grade-title');
+
+        inputCari.addEventListener('keyup', function() {
+            const kataKunci = inputCari.value.toLowerCase();
+            let adaMateriTampil = false;
+
+            // 1. Filter Kartu Materi
+            semuaKartu.forEach(kartu => {
+                const isiKartu = kartu.textContent.toLowerCase();
+                
+                if (isiKartu.includes(kataKunci)) {
+                    kartu.style.display = "block";
+                    kartu.style.animation = "fadeUp 0.5s ease-out";
+                    adaMateriTampil = true; // Tandai kalau ada minimal 1 kartu yang cocok
+                } else {
+                    kartu.style.display = "none";
+                }
+            });
+
+            // 2. Logika Pesan "Tidak Ditemukan"
+            if (adaMateriTampil) {
+                pesanKosong.style.display = "none";
+            } else {
+                pesanKosong.style.display = "block";
+                // Masukkan kata kunci ke dalam teks pesan error
+                pesanKosong.innerHTML = `<p>🔍 Maaf, materi "<b>${inputCari.value}</b>" tidak ditemukan.</p>`;
+            }
+
+            // 3. (Opsional) Sembunyikan Judul Jenjang (SMP/SMA) jika kosong
+            // Kita cek setiap grid materi, kalau isinya 'none' semua, judulnya ikut 'none'
+            const grids = document.querySelectorAll('.math-grid');
+            grids.forEach((grid, index) => {
+                const kartuDiGrid = grid.querySelectorAll('.math-card');
+                const masihAdaKartu = Array.from(kartuDiGrid).some(k => k.style.display === "block");
+                
+                // Hubungkan grid dengan judul di atasnya (index yang sama)
+                if (masihAdaKartu) {
+                    semuaJudulJenjang[index].style.display = "block";
+                } else {
+                    semuaJudulJenjang[index].style.display = "none";
+                }
+            });
+        });
+
+        // Materi Input
+        // 1. Fungsi Menghitung Luas Lingkaran
+        function hitungLuasLingkaran(jariJari) {
+            const phi = 3.14;
+            let luas = phi * (jariJari ** 2);
+            return luas;
+        }
+
+        // 2. Fungsi Pythagoras (Mencari Sisi Miring c)
+        function hitungC(a, b) {
+            // Rumus: akar dari (a^2 + b^2)
+            let c = Math.sqrt((a ** 2) + (b ** 2));
+            return c;
+        }
+
+        function hitungluassegitiga(alas, tinggi) {
+            let luasS = 0.5 * alas * tinggi;
+            return luasS
+        }
+
+        function cekKelulusan(nilai) {
+            if (nilai >= 75) {
+                return "Selamat! Kamu Lulus KKM Matematika. 🎉";
+            } else {
+                return "Semangat! Coba belajar lagi bab Aljabar ya. 💪";
+            }
+        }
+
+        // Coba panggil di console:
+        console.log(cekKelulusan(80)); // Muncul pesan lulus
+        console.log(cekKelulusan(60)); // Muncul pesan semangat
+
+        // CARA PAKAI:
+        console.log("Luas Lingkaran (r=7): " + hitungLuasLingkaran(7));
+        console.log("Sisi Miring Pythagoras (3 & 4): " + hitungC(3, 4));
+        console.log("Hitung Luas Segitiga dengan alas 4 dan tinggi 7 yaitu " + hitungluassegitiga(4, 7));
+
+        // --- LOGIKA KALKULATOR (GABUNGAN DAY 10 & 11) ---
+
+        // 1. SELECTING (DOM): Menangkap elemen HTML ke dalam variabel JS
+        const inputJari = document.getElementById('inputJari');
+        const btnHitung = document.getElementById('btnHitung');
+        const teksHasil = document.getElementById('teksHasil');
+
+        // 2. EVENT LISTENER: Menunggu tombol diklik
+        btnHitung.addEventListener('click', function() {
+            
+            // 3. GET VALUE: Mengambil angka dari kotak input
+            // .value itu hasilnya string, jadi kita ubah ke angka pakai parseFloat()
+            let r = parseFloat(inputJari.value);
+
+            // 4. LOGIC VALIDATION (Materi Day 11): Cek input valid nggak?
+            if (isNaN(r) || r <= 0) {
+                // Kalau user iseng masukin huruf atau angka minus
+                teksHasil.style.color = 'red';
+                teksHasil.innerText = "⚠️ Eits, masukkan angka jari-jari yang benar ya!";
+            } else {
+                // ---1. LOGIKA PEMILIHAN
+                let phiValue;
+                let phiText;
+
+                // Cek apakah r kelipatan 7? (pakai  modulus %)
+                if (r % 7 === 0) {
+                    phiValue = 22 / 7; // Gunakan pecahan asli biar presisi
+                    phiText = "22/7"; // Teks untuk ditampilkan                    
+                } else {
+                    phiValue = 3.14
+                    phiText = "3.14"
+                }
+
+                // ---2. HITUNG LUAS---
+                let luas = phiValue * r * r
+
+                teksHasil.style.color = '#10b981'; // Ubah warna jadi hijau
+                // .toFixed(2) biar angkanya cuma 2 digit di belakang koma (rapi)
+                teksHasil.innerText = `Luas Lingkaran dengan r=${r} adalah ${luas.toFixed(2)} cm²`;
+
+                teksHasil.innerHTML = `
+                    <div style="text-align: left; display: inline-block; background: #f1f5f9; padding: 15px; border-radius: 10px;">
+                        📏 <b>Langkah Penyelesaian:</b> <br>
+                        
+                        <hr style="margin: 8px 0; border: 0; border-top: 1px solid #ccc;">
+                        
+                        Diketahui jari-jari (r) = <b>${r}</b> <br>
+                        ${r % 7 === 0? "<i>(Karena r kelipatan 7, kita pakai π =22/7)</i><br>" : "<i>(Karena r BUKAN kelipatan 7, kita pakai π = 3.14)</i><br>"}
+                       
+                        <br>
+                        Rumus Luas: L = π × r × r <br>
+                        L = ${phiText} × ${r} × ${r} <br>
+                        
+                        <br>
+                        ✅ <b>Hasil Akhir = <span style="color: #10b981; font-size: 1.2em;">${luas.toFixed(2)} cm²</span></b>
+                    </div>
+                `;
+            }
+        });
+
+        // --- LOGIKA DAY 12 dan 13: LOOPS & ARRAYS ---
+        const btnGenerate = document.getElementById('btnGenerate');
+        const angkaTabel = document.getElementById('angkaTabel');
+        const hasilTabel = document.getElementById('hasilTabel');
+
+        btnGenerate.addEventListener('click', function() {
+            let n = parseInt(angkaTabel.value);
+
+            if (isNaN(n)) {
+                alert("Masukan angka dulu yaaa");
+                return
+            }
+
+            let daftarHasil = [];
+
+            for (let i=1; i <= 10; i++) {
+                daftarHasil.push(`${n} x ${i} = ${n * i}`);
+            }
+
+            hasilTabel.innerHTML ="";
+
+            daftarHasil.forEach(function(item) {
+                hasilTabel.innerHTML += `
+                    <div style="background: white; padding: 10px; border: 1px solid #ddd; border-radius: 5px; min-width: 100px;">
+                        ${item}
+                    </div>
+                `;
+            });
+
+        });
+
+        // --- FITUR TAMBAHAN: ENTER KEY ---
+
+        // Kita pasang "telinga" di kotak input (bukan di tombol)
+        angkaTabel.addEventListener('keyup', function(event) {
+            
+            // Cek apakah tombol yang ditekan adalah "Enter"
+            if (event.key === "Enter") {
+                // Panggil perintah klik pada tombol hitung secara otomatis
+                btnGenerate.click();
+            }
+
+        });
+
+        // Kita pasang "telinga" di kotak input (bukan di tombol)
+        inputJari.addEventListener('keyup', function(event) {
+            
+            // Cek apakah tombol yang ditekan adalah "Enter"
+            if (event.key === "Enter") {
+                // Panggil perintah klik pada tombol hitung secara otomatis
+                btnHitung.click();
+            }
+
+        });
+
+        let jawabanBenar;
+
+        function buatSoal() {
+            const a1 = Math.floor(Math.random() * 50) + 1;
+            const a2 = Math.floor(Math.random() * 50) + 1;
+            const operators = ['+', '-'];
+            const op = operators[Math.floor(Math.random() * operators.length)];
+
+            document.getElementById('angka1').innerText = a1;
+            document.getElementById('angka2').innerText = a2;
+            document.getElementById('operator').innerText = op;
+
+            jawabanBenar = op === '+' ? a1 + a2 : a1 - a2;
+            document.getElementById('jawabanUser').value = "";
+            document.getElementById('feedbackQuiz').innerText = "";
+        }
+
+        document.getElementById('btnCekQuiz').addEventListener('click', function() {
+            const userAns = parseInt(document.getElementById('jawabanUser').value);
+            const feedback = document.getElementById('feedbackQuiz');
+
+            if (userAns === jawabanBenar) {
+                feedback.innerText = "✅ Keren! Jawabanmu benar.";
+                feedback.style.color = "#10b981";
+                setTimeout(buatSoal, 2000); // Ganti soal otomatis setelah 2 detik
+            } else {
+                feedback.innerText = "❌ Ups! Coba hitung lagi ya.";
+                feedback.style.color = "#ef4444";
+            }
+        });
+
+        // Jalankan soal pertama kali saat web dibuka
+        buatSoal();
+
+        const inputJawaban = document.getElementById('jawabanUser');
+        const btnCek = document.getElementById('btnCekQuiz');
+
+        inputJawaban.addEventListener('keyup', function(event) {
+            // Jika tombol yang ditekan adalah "Enter"
+            if (event.key === "Enter") {
+                // Mencegah browser melakukan reload (opsional tapi bagus)
+                event.preventDefault();
+                // Menjalankan klik pada tombol Cek secara otomatis
+                btnCek.click();
+            }
+        });
+
+        // Fungsi untuk ambil data dari internet (API)
+        async function ambilQuote() {
+            const teksBox = document.getElementById('quoteTeks');
+            teksBox.innerText = "Mencari inspirasi...";
+            try {
+                const res = await fetch("https://api.adviceslip.com/advice");
+                const data = await res.json();
+                teksBox.innerText = `"${data.slip.advice}"`;
+            } catch (e) {
+                teksBox.innerText = "Tetap semangat belajar!";
+            }
+        }
+        document.getElementById('btnQuote').addEventListener('click', ambilQuote);
+        ambilQuote();
+    </script>
+</body>
+</html>
